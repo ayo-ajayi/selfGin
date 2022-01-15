@@ -1,0 +1,9 @@
+.env
+*.log
+go.mod
+go.sum
+note.txt
+index.html
+*.png
+*.exe
+main.go
