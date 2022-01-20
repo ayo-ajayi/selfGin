@@ -6,9 +6,9 @@ import (
 	"os"
 )
 
-//This is a wrapper that takes the port, mongo_url and auth secret to return them for use on a global scale.
+//This is a wrapper that takes the port, dbUrl and auth secret to return them for use on a global scale.
 //Set first argument to empty string "" to use default port 8080.
-func Config(port string, mongo_url string, secret string) (string, string, string) {
+func Config(port string, dbUrl string, secret string) (string, string, string) {
 	
 	err := godotenv.Load(".env")
 
@@ -19,7 +19,7 @@ func Config(port string, mongo_url string, secret string) (string, string, strin
 	if port_ == "" {
 		port_ = "8080"
 	}
-	mongo_url_ := os.Getenv(mongo_url)
+	dbUrl_ := os.Getenv(dbUrl)
 	secret_ := os.Getenv(secret)
-	return port_, mongo_url_, secret_
+	return port_, dbUrl_, secret_
 }
